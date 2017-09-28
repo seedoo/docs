@@ -41,10 +41,12 @@ Se necessario, clonare eventuali repository aggiuntivi contenenti moduli custom.
 
 ### Odoo Community Backports
 
-Seedoo è un'applicazione basata su Odoo. Occorre quindi clonare il repository relativo alla versione di Odoo sviluppata dalla Community, branch 8.0:
+Seedoo è un'applicazione basata su Odoo. Occorre quindi clonare il repository relativo alla versione di Odoo sviluppata dalla Community, branch 8.0. Successivamente effettuare il checkout del repository al commit corretto indicato nel repository principale (https://github.com/seedoo/seedoo):
 
 ```bash
 git clone -b 8.0 https://github.com/oca/ocb.git
+cd ocb
+git checkout <commit-hash>
 ```
 
 ## Creazione VirtualEnv Python
@@ -113,7 +115,7 @@ Per avviare Seedoo all'interno di PyCharm occorre creare una nuova configurazion
 Impostare come `Script parameters` i seguenti parametri:
 
 ```
---addons-path=ocb/openerp/addons,ocb/addons,seedo/core,seedoo-attivita,l10n-italy
+--addons-path=ocb/openerp/addons,ocb/addons,seedoo/core,seedoo-attivita,l10n-italy
 --xmlrpc-port=8069
 --db_host=127.0.0.1
 --db_port=5432
